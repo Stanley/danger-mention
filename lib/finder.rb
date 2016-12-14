@@ -23,7 +23,7 @@ class Finder
       lines = f.patch.split(/\n/).reject(&:empty?)
 
       count = 0
-      lines[4..-1].each do |line|
+      (lines[4..-1] || []).each do |line|
         count += 1 if line.start_with?('-', '+')
       end
 
